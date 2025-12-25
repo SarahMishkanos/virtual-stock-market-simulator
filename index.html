@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Indian Stock Simulator</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="light">
+
+  
+  <div id="welcome-screen">
+    <div class="welcome-box">
+      <h1>Welcome to Indian Stock Simulator</h1>
+      <input id="username" placeholder="Enter your name" />
+      <div class="welcome-actions">
+        <button id="start-btn">Start</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="brand">
+      <h1>Indian Stock Simulator</h1>
+      <div id="welcome-user" class="muted"></div>
+    </div>
+
+    <div class="header-right">
+      <div class="balance">Balance: <strong>₹<span id="cash">1,00,000</span></strong></div>
+      <button id="theme-toggle" class="ghost">Dark</button>
+    </div>
+  </header>
+
+  <!-- MAIN GRID: left (stocks+graph) + right (portfolio) -->
+  <main>
+    <!-- STOCKS -->
+    <section class="card stocks" id="stocks-section">
+      <div class="section-head">
+        <h2>Market / Stocks</h2>
+        <div class="sector-row" id="sector-row"></div>
+      </div>
+
+      <div class="table-wrap">
+        <table id="stock-table">
+          <thead>
+            <tr><th>Stock</th><th>Sector</th><th>Price</th><th>Change</th><th>Actions</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <aside class="card" id="portfolio-panel">
+      <h2>Your Portfolio</h2>
+      <p><small>Initial Capital: ₹<span id="initial-capital">100000</span></small></p>
+      <p><b>Balance:</b> ₹<span id="cash-portfolio">100000</span></p>
+      <p><b>Total Invested:</b> ₹<span id="invested">0</span></p>
+      <p><b>Current Value:</b> ₹<span id="currentValue">0</span></p>
+      <p><b>Net Profit:</b> <span id="netProfit">₹0</span></p>
+
+      <div id="topup-row" style="margin-top:8px;">
+        <button id="add-cash-btn" style="display:none">Add ₹1,00,000</button>
+        <small id="topup-note" class="muted" style="display:block;margin-top:6px;"></small>
+      </div>
+
+      <hr/>
+
+      <div class="table-wrap small">
+        <table id="portfolio-table">
+          <thead><tr><th>Stock</th><th>Shares</th><th>Value</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </aside>
+
+    <!-- GRAPH (spans full width of left column below stocks) -->
+    <section class="card graph" id="graph-section">
+      <h2>Portfolio Graph (Your holdings)</h2>
+      <canvas id="stock-graph"></canvas>
+      <div id="graph-legend" class="legend"></div>
+      <p class="creator-note">If you are reading this,then welcome to the dark side</p>
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>© Indian Stock Simulator</div>
+    <div>If you become a millionaire here,congratulations… you’re still broke.Also this is just training,please don't call your banker</div>
+     
+    <div>
+      <button id="save-btn" class="ghost">Save Progress</button>
+      <button id="load-btn" class="ghost">Load Progress</button>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
