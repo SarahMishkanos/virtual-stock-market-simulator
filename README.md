@@ -1,5 +1,7 @@
 # Virtual Stock Market Simulator
 
+**Live Site:** [Click here to open] (https://sarahmishkanos.github.io/virtual-stock-market-simulator/)
+
 A web-based virtual stock trading simulator where users can buy and sell stocks with dynamic price movement and portfolio tracking.
 
 ## Features
